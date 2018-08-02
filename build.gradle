@@ -32,4 +32,7 @@ ext {
 
     //RETROFIT
     retrofitVersion = '2.4.0'
+
+    //JSOUP
+    jsoupVersion = '1.11.3'
 }

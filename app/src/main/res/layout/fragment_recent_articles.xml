@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.recentarticles.RecentArticlesFragment">
+    tools:context=".view.recentarticles.RecentArticlesFragment"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recent_articles"
+        android:name="logientlab.com.argos.view.repertory.RepertoryFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/hello_blank_fragment" />
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".view.repertory.ColleaguesFragment"
+        tools:listitem="@layout/view_recent_article" />
 
-</LinearLayout>
+
+</FrameLayout>
