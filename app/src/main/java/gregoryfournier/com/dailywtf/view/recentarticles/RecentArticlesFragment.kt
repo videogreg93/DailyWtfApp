@@ -7,10 +7,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.gson.JsonArray
 
 import gregoryfournier.com.dailywtf.R
-import org.json.JSONArray
+import gregoryfournier.com.dailywtf.system.data.Article
 
 
 class RecentArticlesFragment : Fragment(), RecentArticlesContract.View {
@@ -26,8 +25,8 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View {
         return view
     }
 
-    override fun onGetRecentArticles(articles: JsonArray) {
-        Log.d("RecentArticlesFragment", articles.toString())
+    override fun onGetRecentArticles(articles: List<Article>) {
+        Log.d("RecentArticlesFragment", articles.get(0).toString())
     }
 
     override fun doOnError(e: Exception) {
