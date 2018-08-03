@@ -12,6 +12,8 @@ import android.view.ViewGroup
 
 import gregoryfournier.com.dailywtf.R
 import gregoryfournier.com.dailywtf.system.data.Article
+import gregoryfournier.com.dailywtf.view.article.ArticleFragment
+import gregoryfournier.com.dailywtf.view.utils.ViewUtils
 import kotlinx.android.synthetic.main.fragment_recent_articles.*
 import kotlinx.android.synthetic.main.fragment_recent_articles.view.*
 
@@ -49,6 +51,9 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentAr
         if (articleView.tag is Article) {
             val article = articleView.tag as Article
             System.out.println(article.id)
+            val bundle = Bundle()
+            bundle.putParcelable(ArticleFragment.ARTICLE, article)
+            ViewUtils.displayFragmentWithArgs(activity!!, ArticleFragment(),false, bundle)
         }
     }
 
