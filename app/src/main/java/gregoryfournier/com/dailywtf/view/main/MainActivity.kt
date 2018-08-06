@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import gregoryfournier.com.dailywtf.R
 import gregoryfournier.com.dailywtf.view.recentarticles.RecentArticlesFragment
+import gregoryfournier.com.dailywtf.view.series.AllSeriesFragment
 import gregoryfournier.com.dailywtf.view.utils.ViewUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -56,17 +57,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
+            R.id.featured_articles -> {
                 // Handle the camera action
             }
-            R.id.nav_gallery -> {
+            R.id.code_sod -> {
 
             }
-            R.id.nav_slideshow -> {
+            R.id.errord -> {
 
             }
-            R.id.nav_manage -> {
-
+            R.id.other_articles -> {
+                ViewUtils.displayFragmentWithoutArgs(this,AllSeriesFragment(),false)
             }
             R.id.nav_share -> {
 

@@ -15,6 +15,10 @@ interface DailyWtfApiService {
     @Headers("Content-Type: application/json")
     fun getRecentArticles(@Path("count") count: String): Call<JsonArray>
 
+    @GET("series/")
+    @Headers("Content-Type: application/json")
+    fun getAllSeries(): Call<JsonArray>
+
     companion object {
         fun createService(): DailyWtfApiService {
             return Retrofit.Builder()

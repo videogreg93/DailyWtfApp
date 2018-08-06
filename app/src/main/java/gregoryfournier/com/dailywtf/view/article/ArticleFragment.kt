@@ -24,9 +24,10 @@ class ArticleFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_article, container, false)
         val article = arguments?.getParcelable<Article>(ARTICLE)
         if (article != null) {
-            // TODO Display Article
+            // TODO Maybe replace Webview
             view.title.text = article.title
-            view.body.text = Jsoup.parse(article.bodyHtml).text()
+            view.author.text = "by ${article.author.name}"
+            view.body.loadData(article.bodyHtml, "text/html", null)
         }
 
         return view

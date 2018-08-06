@@ -15,16 +15,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Example Title" />
-
     <TextView
-        android:id="@+id/body"
+        android:id="@+id/author"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        tools:text="by Remy Porter in CodeSOD on 2018-08-02"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toTopOf="@id/body"
+        />
+
+    <!--<TextView-->
+        <!--android:id="@+id/body"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--tools:text="This is an example article This is an example article This is an example article This is an example article "-->
+        <!--app:layout_constraintTop_toBottomOf="@id/title"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--/>-->
+    <WebView
+        android:id="@+id/body"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="10dp"
         tools:text="This is an example article This is an example article This is an example article This is an example article "
-        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/author"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+        app:layout_constraintVertical_bias="0"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bottom_guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95"
         />
 
 </android.support.constraint.ConstraintLayout>

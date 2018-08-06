@@ -32,7 +32,6 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentAr
     }
 
     override fun onGetRecentArticles(articles: List<Article>) {
-        Log.d("RecentArticlesFragment", articles.get(0).toString())
         if (recent_articles is RecyclerView) {
             with(recent_articles) {
                 recentArticlesAdapter = RecentArticlesAdapter(this@RecentArticlesFragment)
@@ -53,7 +52,7 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentAr
             System.out.println(article.id)
             val bundle = Bundle()
             bundle.putParcelable(ArticleFragment.ARTICLE, article)
-            ViewUtils.displayFragmentWithArgs(activity!!, ArticleFragment(),true, bundle)
+            ViewUtils.displayFragmentWithArgs(activity!!, ArticleFragment(),false, bundle)
         }
     }
 
