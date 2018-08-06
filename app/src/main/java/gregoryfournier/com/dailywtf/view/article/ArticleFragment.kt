@@ -22,7 +22,7 @@ class ArticleFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_article, container, false)
-        val article = activity?.intent?.extras?.getParcelable<Article>(ARTICLE)
+        val article = arguments?.getParcelable<Article>(ARTICLE)
         if (article != null) {
             // TODO Display Article
             view.title.text = article.title
