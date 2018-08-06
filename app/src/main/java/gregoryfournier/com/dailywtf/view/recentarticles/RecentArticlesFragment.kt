@@ -5,17 +5,14 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import gregoryfournier.com.dailywtf.R
 import gregoryfournier.com.dailywtf.system.data.Article
 import gregoryfournier.com.dailywtf.view.article.ArticleFragment
 import gregoryfournier.com.dailywtf.view.utils.ViewUtils
 import kotlinx.android.synthetic.main.fragment_recent_articles.*
-import kotlinx.android.synthetic.main.fragment_recent_articles.view.*
 
 
 class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentArticlesAdapter.RecyclerViewClickListener {
@@ -27,7 +24,13 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentAr
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_recent_articles, container, false)
         RecentArticlesPresenter(this)
-        presenter.getRecentArticles()
+        val series = arguments?.getString(SERIES)
+        if (series != null) {
+            presenter.getArticlesFromSeries(series)
+        } else {
+            presenter.getRecentArticles()
+        }
+
         return view
     }
 
@@ -52,9 +55,12 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentAr
             System.out.println(article.id)
             val bundle = Bundle()
             bundle.putParcelable(ArticleFragment.ARTICLE, article)
-            ViewUtils.displayFragmentWithArgs(activity!!, ArticleFragment(),false, bundle)
+            ViewUtils.displayFragmentWithArgs(activity!!, ArticleFragment(), false, bundle)
         }
     }
 
+    companion object {
+        const val SERIES = "SERIES"
+    }
 
 }

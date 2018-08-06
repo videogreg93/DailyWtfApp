@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.recentarticles.RecentArticlesFragment"
+
+    android:animateLayoutChanges="true"
     >
 
     <android.support.v7.widget.RecyclerView
@@ -13,7 +15,8 @@
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"
         tools:context=".view.repertory.ColleaguesFragment"
-        tools:listitem="@layout/view_recent_article" />
+        tools:listitem="@layout/view_recent_article"
+        />
 
 
 </FrameLayout>

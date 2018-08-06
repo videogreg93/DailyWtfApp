@@ -5,20 +5,19 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/recent_articles"
+            android:title="@string/sidebar_recent_articles" />
+        <item
             android:id="@+id/featured_articles"
-            android:icon="@drawable/ic_menu_camera"
             android:title="@string/sidebar_featured_articles" />
         <item
             android:id="@+id/code_sod"
-            android:icon="@drawable/ic_menu_gallery"
             android:title="@string/sidebar_codesod" />
         <item
             android:id="@+id/errord"
-            android:icon="@drawable/ic_menu_manage"
             android:title="@string/sidebar_errord" />
         <item
             android:id="@+id/other_articles"
-            android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/sidebar_other_articles" />
     </group>
 

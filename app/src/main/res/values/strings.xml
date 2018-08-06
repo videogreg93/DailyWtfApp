@@ -7,10 +7,16 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sidebar_featured_articles">Featured Articles</string>
     <string name="sidebar_codesod">CODESOD</string>
     <string name="sidebar_errord">Error\'d</string>
     <string name="sidebar_other_articles">Other Articles</string>
+    <string name="sidebar_recent_articles">Recent Articles</string>
+
+    <!--SLUGS-->
+    <string name="slug_feature_articles">feature-articles</string>
+    <string name="slug_code_sod">code-sod</string>
+    <string name="slug_errord">errord</string>
+    <string name="all_series_title">All Series</string>
 </resources>

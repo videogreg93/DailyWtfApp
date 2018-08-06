@@ -12,6 +12,8 @@ import android.widget.Toast
 
 import gregoryfournier.com.dailywtf.R
 import gregoryfournier.com.dailywtf.system.data.Series
+import gregoryfournier.com.dailywtf.view.recentarticles.RecentArticlesFragment
+import gregoryfournier.com.dailywtf.view.utils.ViewUtils
 import gregoryfournier.com.dailywtf.view.utils.showSnackBar
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_all_series.*
@@ -51,6 +53,11 @@ class AllSeriesFragment : Fragment(), AllSeriesContract.View, AllSeriesAdapter.R
     }
 
     override fun recyclerViewListClicked(seriesView: View, position: Int) {
-
+        val series = seriesView.tag
+        if (series is Series) {
+            val bundle = Bundle()
+            bundle.putString(RecentArticlesFragment.SERIES, series.slug)
+            ViewUtils.displayFragmentWithArgs(activity!!, RecentArticlesFragment(), true,bundle)
+        }
     }
 }

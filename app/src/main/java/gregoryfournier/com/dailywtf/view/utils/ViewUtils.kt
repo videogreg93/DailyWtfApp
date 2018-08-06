@@ -39,12 +39,12 @@ object ViewUtils {
      * @param addToBackStack    true if the new fragment should be added to the backstack
      */
     fun displayFragmentWithoutArgs(activity: FragmentActivity, fragmentToDisplay: Fragment, addToBackStack: Boolean) {
-        val fragment = activity.supportFragmentManager.findFragmentByTag(fragmentToDisplay.javaClass.name)
-        if (fragment != null) {
-            activity.supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.content, fragment, fragmentToDisplay.javaClass.name).commit()
-        } else {
+//        val fragment = activity.supportFragmentManager.findFragmentByTag(fragmentToDisplay.javaClass.name)
+//        if (fragment != null) {
+//            activity.supportFragmentManager
+//                    .beginTransaction()
+//                    .replace(R.id.content, fragment, fragmentToDisplay.javaClass.name).commit()
+//        } else {
             val transaction = activity.supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.content, fragmentToDisplay, fragmentToDisplay.javaClass.name)
@@ -52,7 +52,7 @@ object ViewUtils {
                 transaction.addToBackStack(fragmentToDisplay.javaClass.name)
             }
             transaction.commit()
-        }
+//        }
     }
 
 

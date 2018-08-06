@@ -14,5 +14,6 @@ interface RecentArticlesContract {
 
     interface Presenter : BasePresenter<DailyWtfApiService> {
         fun getRecentArticles(count: Int = 8)
+        fun getArticlesFromSeries(series: String,count: Int = 8)
     }
 }

@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
+            // TODO if not on main fragment, show that, or else close app
             super.onBackPressed()
         }
     }
@@ -57,20 +58,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
+            R.id.recent_articles -> {
+                ViewUtils.displayFragmentWithoutArgs(this, RecentArticlesFragment(),false)
+            }
             R.id.featured_articles -> {
-                // Handle the camera action
+                viewSeries(getString(R.string.slug_feature_articles))
             }
             R.id.code_sod -> {
-
+                viewSeries(getString(R.string.slug_code_sod))
             }
             R.id.errord -> {
-
+                viewSeries(getString(R.string.slug_errord))
             }
             R.id.other_articles -> {
                 ViewUtils.displayFragmentWithoutArgs(this,AllSeriesFragment(),false)
-            }
-            R.id.nav_share -> {
-
             }
             R.id.nav_send -> {
 
@@ -78,5 +79,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun viewSeries(series: String) {
+        val bundle = Bundle()
+        bundle.putString(RecentArticlesFragment.SERIES, series)
+        ViewUtils.displayFragmentWithArgs(this, RecentArticlesFragment(), false, bundle)
     }
 }

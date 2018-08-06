@@ -6,11 +6,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.series.AllSeriesFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/all_series"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/view_series" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/all_series_title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="@color/primary_text"
+            app:layout_constraintBottom_toTopOf="@id/all_series"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/all_series"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/view_series" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
 
 </FrameLayout>
