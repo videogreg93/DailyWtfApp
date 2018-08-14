@@ -31,14 +31,6 @@ class RecentArticlesAdapter(val itemListener: RecyclerViewClickListener) : ListA
 
     }
 
-    fun append(articles: ArrayList<Article>) {
-        val completeList = ArrayList<Article>()
-        for (index in 0..itemCount) {
-            completeList.add(getItem(index))
-        }
-        completeList.addAll(articles)
-        submitList(completeList)
-    }
 
 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView), View.OnClickListener {
