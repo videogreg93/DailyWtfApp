@@ -55,7 +55,7 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentAr
             System.out.println(article.id)
             val bundle = Bundle()
             bundle.putParcelable(ArticleFragment.ARTICLE, article)
-            ViewUtils.displayFragmentWithArgs(activity!!, ArticleFragment(), false, bundle)
+            ViewUtils.displayFragmentWithArgs(activity!!, ArticleFragment(), true, bundle)
         }
     }
 

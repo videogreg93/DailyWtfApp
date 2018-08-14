@@ -8,10 +8,18 @@ import gregoryfournier.com.dailywtf.system.data.Article
  */
 class ArticlesDiffUtil : DiffUtil.ItemCallback<Article>() {
     override fun areItemsTheSame(oldItem: Article?, newItem: Article?): Boolean {
-        return false
+        return areTheSame(oldItem,newItem)
     }
 
     override fun areContentsTheSame(oldItem: Article?, newItem: Article?): Boolean {
-        return false
+        return areTheSame(oldItem,newItem)
+    }
+
+    private fun areTheSame(oldItem: Article?, newItem: Article?): Boolean {
+        if (oldItem != null && newItem != null) {
+            return oldItem.equals(newItem)
+        } else {
+            return false
+        }
     }
 }

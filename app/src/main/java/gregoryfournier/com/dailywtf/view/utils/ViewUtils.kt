@@ -1,6 +1,5 @@
 package gregoryfournier.com.dailywtf.view.utils
 
-import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
@@ -39,20 +38,13 @@ object ViewUtils {
      * @param addToBackStack    true if the new fragment should be added to the backstack
      */
     fun displayFragmentWithoutArgs(activity: FragmentActivity, fragmentToDisplay: Fragment, addToBackStack: Boolean) {
-//        val fragment = activity.supportFragmentManager.findFragmentByTag(fragmentToDisplay.javaClass.name)
-//        if (fragment != null) {
-//            activity.supportFragmentManager
-//                    .beginTransaction()
-//                    .replace(R.id.content, fragment, fragmentToDisplay.javaClass.name).commit()
-//        } else {
-            val transaction = activity.supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.content, fragmentToDisplay, fragmentToDisplay.javaClass.name)
-            if (addToBackStack) {
-                transaction.addToBackStack(fragmentToDisplay.javaClass.name)
-            }
-            transaction.commit()
-//        }
+        val transaction = activity.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.content, fragmentToDisplay, fragmentToDisplay.javaClass.name)
+        if (addToBackStack) {
+            transaction.addToBackStack(fragmentToDisplay.javaClass.name)
+        }
+        transaction.commit()
     }
 
 

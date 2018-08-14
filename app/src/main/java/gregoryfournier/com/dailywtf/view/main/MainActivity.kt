@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import gregoryfournier.com.dailywtf.R
+import gregoryfournier.com.dailywtf.view.about.AboutFragment
 import gregoryfournier.com.dailywtf.view.recentarticles.RecentArticlesFragment
 import gregoryfournier.com.dailywtf.view.series.AllSeriesFragment
 import gregoryfournier.com.dailywtf.view.utils.ViewUtils
@@ -34,7 +35,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
-            // TODO if not on main fragment, show that, or else close app
             super.onBackPressed()
         }
     }
@@ -46,11 +46,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
-            R.id.action_settings -> return true
+            R.id.action_settings -> {
+                ViewUtils.displayFragmentWithoutArgs(this,AboutFragment(), true)
+                return true
+            }
             else -> return super.onOptionsItemSelected(item)
         }
     }
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.recent_articles -> {
-                ViewUtils.displayFragmentWithoutArgs(this, RecentArticlesFragment(),false)
+                ViewUtils.displayFragmentWithoutArgs(this, RecentArticlesFragment(),true)
             }
             R.id.featured_articles -> {
                 viewSeries(getString(R.string.slug_feature_articles))
@@ -71,10 +71,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 viewSeries(getString(R.string.slug_errord))
             }
             R.id.other_articles -> {
-                ViewUtils.displayFragmentWithoutArgs(this,AllSeriesFragment(),false)
-            }
-            R.id.nav_send -> {
-
+                ViewUtils.displayFragmentWithoutArgs(this,AllSeriesFragment(),true)
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
@@ -84,6 +81,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun viewSeries(series: String) {
         val bundle = Bundle()
         bundle.putString(RecentArticlesFragment.SERIES, series)
-        ViewUtils.displayFragmentWithArgs(this, RecentArticlesFragment(), false, bundle)
+        ViewUtils.displayFragmentWithArgs(this, RecentArticlesFragment(), true, bundle)
     }
 }

@@ -2,7 +2,6 @@ package gregoryfournier.com.dailywtf.view.recentarticles
 
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.widget.RecyclerView
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +29,15 @@ class RecentArticlesAdapter(val itemListener: RecyclerViewClickListener) : ListA
             tag = article
         }
 
+    }
+
+    fun append(articles: ArrayList<Article>) {
+        val completeList = ArrayList<Article>()
+        for (index in 0..itemCount) {
+            completeList.add(getItem(index))
+        }
+        completeList.addAll(articles)
+        submitList(completeList)
     }
 
 
