@@ -32,5 +32,4 @@ class AllSeriesPresenter(val myView: AllSeriesContract.View,
             }
         }
     }
-
 }

@@ -21,7 +21,6 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentAr
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_recent_articles, container, false)
         RecentArticlesPresenter(this)
         val series = arguments?.getString(SERIES)
@@ -49,6 +48,7 @@ class RecentArticlesFragment : Fragment(), RecentArticlesContract.View, RecentAr
         e.printStackTrace()
     }
 
+    @Suppress("PARAMETER_NAME_CHANGED_ON_OVERRIDE")
     override fun recyclerViewListClicked(articleView: View, position: Int) {
         if (articleView.tag is Article) {
             val article = articleView.tag as Article

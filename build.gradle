@@ -29,6 +29,13 @@ task clean(type: Delete) {
 ext {
     //MAIN
     kotlinCoroutinesVersion = '0.23.3'
+    supportVersion = '27.1.1'
+    constraintLayoutVersion = '1.1.2'
+
+    //TESTS
+    junitVersion = '4.12'
+    testRunnerVersion = '1.0.2'
+    espressoVersion = '3.0.2'
 
     //RETROFIT
     retrofitVersion = '2.4.0'

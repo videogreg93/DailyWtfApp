@@ -23,4 +23,5 @@
     <string name="about_description">Founded in 2004 by Alex Papadimoulis, The Daily WTF is your how-not-to guide for developing software. We recount tales of disastrous development, from project management gone spectacularly bad to inexplicable coding choices. Remy Porter is the editor-in-chief and needs to read your story or see your bad code.</string>
     <string name="about_submit">Submit your WTF</string>
     <string name="about_submit_url">http://thedailywtf.com/submit-wtf</string>
+    <string name="error_no_series">Could not obtain series</string>
 </resources>

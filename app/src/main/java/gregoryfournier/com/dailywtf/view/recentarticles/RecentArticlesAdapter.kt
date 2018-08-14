@@ -24,11 +24,9 @@ class RecentArticlesAdapter(val itemListener: RecyclerViewClickListener) : ListA
         holder.authorView.text = "by ${article.author.firstName}"
         holder.summaryView.text = Jsoup.parse(article.summaryHtml).text()
 
-
         with(holder.mView) {
             tag = article
         }
-
     }
 
 

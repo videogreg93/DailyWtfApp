@@ -14,22 +14,6 @@ fun View.showSnackBar(message: String, duration: Int): Snackbar {
     return snackbar
 }
 
-fun View.showSnackBarButton(message: String, duration: Int, actionTitleResId: Int, action: View.OnClickListener): Snackbar {
-    val snackbar = Snackbar.make(this, message, duration)
-            .setAction(actionTitleResId, action)
-
-    snackbar.show()
-    return snackbar
-}
-
-fun View.showSnackBarButton(message: String, duration: Int, actionTitle: String, action: View.OnClickListener): Snackbar {
-    val snackbar = Snackbar.make(this, message, duration)
-            .setAction(actionTitle, action)
-    snackbar.show()
-    return snackbar
-}
-
-//TODO put in LLUIFOUNDATION when created
 object ViewUtils {
     /**
      * Replace the current fragment without arguments

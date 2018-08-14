@@ -36,6 +36,4 @@ class ArticleFragment : Fragment() {
     companion object {
         const val ARTICLE = "ARTICLE"
     }
-
-
 }
